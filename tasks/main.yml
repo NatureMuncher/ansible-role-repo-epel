@@ -31,9 +31,9 @@
     - ansible_distribution == "CentOS"
     - ansible_distribution_major_version == '8'
 
-  - name: Add the Red Hat CodeReady Linux Builder for RHEL 8 x86_64
-    rhsm_repository:
-      name: codeready-builder-for-rhel-8-x86_64-rpms
-    when: 
-      - ansible_distribution == 'RedHat'
-      - ansible_distribution_version.split(".")[0] == "8"
+- name: Add the Red Hat CodeReady Linux Builder for RHEL 8 x86_64
+  rhsm_repository:
+    name: codeready-builder-for-rhel-8-x86_64-rpms
+  when: 
+    - ansible_distribution == 'RedHat'
+    - ansible_distribution_version.split(".")[0] == "8"
